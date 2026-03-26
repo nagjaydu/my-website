@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Website</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">MySite</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="menu-toggle">☰</div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <h1>CONFIG AMBULANCES</h1>
+    <p>Fast, responsive and modern design</p>
+    <button onclick="scrollToSection('features')">Get Started</button>
+  </section>
+
+  <!-- FEATURES -->
+  <section id="features" class="features">
+    <h2>Features</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>⚡ Fast</h3>
+        <p>Optimized for speed and performance.</p>
+      </div>
+      <div class="card">
+        <h3>📱 Responsive</h3>
+        <p>Looks great on all devices.</p>
+      </div>
+      <div class="card">
+        <h3>🎨 Modern UI</h3>
+        <p>Clean and elegant design.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>We create stunning websites using modern technologies.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Your Name" required/>
+      <input type="email" placeholder="Email" required/>
+      <textarea placeholder="Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 MySite. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
