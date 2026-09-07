@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PDF Drawing Match</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">PDF Drawing Match</p>
+          <h1>Search drawing PDFs by shape, dimensions, and notes</h1>
+        </div>
+        <div class="stats" aria-live="polite">
+          <div>
+            <span id="libraryCount">0</span>
+            <small>Library PDFs</small>
+          </div>
+          <div>
+            <span id="indexCount">0</span>
+            <small>Indexed pages</small>
+          </div>
+        </div>
+      </header>
+
+      <section class="workspace">
+        <aside class="side-panel">
+          <section class="panel-block">
+            <div class="block-heading">
+              <h2>Library</h2>
+              <span id="libraryState" class="state-pill">Ready</span>
+            </div>
+            <label class="file-drop">
+              <input id="libraryFiles" type="file" accept="application/pdf" multiple />
+              <span>Add reference PDFs</span>
+            </label>
+            <label class="field-label" for="libraryGroupSelect">Reference folder</label>
+            <select id="libraryGroupSelect">
+              <option value="">Ungrouped</option>
+              <option value="1">Page 1 folder</option>
+              <option value="2">Page 2 folder</option>
+              <option value="3">Page 3 folder</option>
+              <option value="4">Page 4 folder</option>
+              <option value="5">Page 5 folder</option>
+              <option value="6">Page 6 folder</option>
+              <option value="7">Page 7 folder</option>
+              <option value="8">Page 8 folder</option>
+              <option value="9">Page 9 folder</option>
+            </select>
+            <div class="button-row">
+              <button id="uploadLibraryBtn" type="button">Add PDFs</button>
+              <button id="rebuildBtn" class="secondary" type="button">Rebuild index</button>
+            </div>
+          </section>
+
+          <section class="panel-block">
+            <div class="block-heading">
+              <h2>Search</h2>
+              <span id="searchState" class="state-pill">Idle</span>
+            </div>
+            <label class="file-drop accent">
+              <input id="queryFile" type="file" accept="application/pdf" />
+              <span>Attach query PDF</span>
+            </label>
+            <label class="field-label" for="queryPageSelect">Search page</label>
+            <select id="queryPageSelect">
+              <option value="">All pages</option>
+              <option value="1">Page 1</option>
+              <option value="2">Page 2</option>
+              <option value="3">Page 3</option>
+              <option value="4">Page 4</option>
+              <option value="5">Page 5</option>
+              <option value="6">Page 6</option>
+              <option value="7">Page 7</option>
+              <option value="8">Page 8</option>
+              <option value="9">Page 9</option>
+            </select>
+            <button id="searchBtn" class="full" type="button">Find matches</button>
+          </section>
+
+          <section class="panel-block compact">
+            <h2>Query Pages</h2>
+            <div id="queryDimensions" class="dimension-list muted">No query loaded</div>
+          </section>
+        </aside>
+
+        <section class="results-area">
+          <div class="results-header">
+            <div>
+              <h2>Page Matches</h2>
+              <p id="resultSummary">Index your library, then run a search.</p>
+            </div>
+            <select id="limitSelect" aria-label="Result limit">
+              <option value="5">Top 5</option>
+              <option value="10" selected>Top 10</option>
+              <option value="20">Top 20</option>
+            </select>
+          </div>
+
+          <div id="emptyState" class="empty-state">
+            <strong>No results yet</strong>
+            <span>Reference PDFs and query PDFs stay on this computer.</span>
+          </div>
+
+          <div id="results" class="results-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
